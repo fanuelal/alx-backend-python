@@ -1,14 +1,17 @@
-#!/usr/bin/python3
-
-""" module of async """
+#!/usr/bin/env python3
+""" Basic syntax await async """
 import asyncio
 import random
 
 
-async def wait_random(max_delay: int = 0) -> float:
+async def wait_random(max_delay: int = 10) -> float:
     """
-    returns the random value generated for asyncio
+        Args:
+            max_delay: max wait
+        Return:
+            float time random
     """
-    randValue: float = random.uniform(0, max_delay)
-    await asyncio.sleep(randValue)
-    return randValue
+    delay: float = random.uniform(0, max_delay)
+    await asyncio.sleep(delay)
+
+    return delay
